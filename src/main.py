@@ -1,5 +1,5 @@
 from PIL import Image
-
+from src.binaryimageprocessing import dilate_binary_image, erode_binary_image
 
 
 
