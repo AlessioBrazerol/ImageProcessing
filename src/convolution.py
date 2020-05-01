@@ -52,7 +52,6 @@ def convolution(input_image, structuring_element):
                             color_new = (color_r, color_g, color_b)
 
             if normalize:
-                print(n)
                 color_new = (color_new[0] // n, color_new[1] // n, color_new[2] // n)
 
             image_map[x, y] = color_new

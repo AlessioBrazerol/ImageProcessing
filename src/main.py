@@ -1,25 +1,30 @@
 from PIL import Image
-from math import cos,sin
 from src.binaryimageprocessing import dilate_binary_image, erode_binary_image
-from src.convolution import  convolution
+from src.convolution import convolution
 
-outputPath = "C:/Users/aless/Desktop/image.png"
-binaryImagePath = "C:/Users/aless/Desktop/original.png"
+binaryImagePath = "../res/original.png"
 binaryImage = Image.open(binaryImagePath)
 
 structuringElement = {(0, 0), (-1, 0), (1, 0), (0, 1), (0, -1)}
 structuringElement2 = {(-2, 0), (2, 0), (0, 2), (0, -2), (0, 0)}
 structuringElement3 = {(0, 5)}
 
+'''
+# Example binary image processing
+
 image1 = dilate_binary_image(binaryImage, structuringElement)
 image2 = erode_binary_image(image1, structuringElement)
 
-# image1.show()
-# image2.show()
-# image.save(outputPath);
+image1.show()
+image2.show()
 
-lennaImagePath = "C:/Users/aless/Desktop/image2.jpg"
+'''
+
+lennaImagePath = "../res/lenna.jpg"
 lennaImage = Image.open(lennaImagePath)
+
+'''
+# Example convolution processing
 
 spatiaLowpassMatrix = [[1, 1, 1],
                        [1, 1, 1],
@@ -67,4 +72,4 @@ lenaCopy.show("gaussianBlur3x3")
 
 lenaCopy = convolution(lennaImage, gaussianBlur5x5)
 lenaCopy.show("gaussianBlur5x5")
-
+'''
