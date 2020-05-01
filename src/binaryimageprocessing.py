@@ -2,7 +2,7 @@ from PIL import Image
 
 '''
 Dilate binary image using a structuring element
-originalImage (+) structuringElement = {(x,y) el. N^2 | ^B(x,y) intersect A != emptyset  }
+originalImage (+) structuringElement = {(x,y) el. N^2 | ^B(x,y) intersect A != empty set  }
 with A = all black pixels
 '''
 

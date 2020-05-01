@@ -1,8 +1,6 @@
 from PIL import Image
 from src.binaryimageprocessing import dilate_binary_image, erode_binary_image
 
-
-
 outputPath = "C:/Users/aless/Desktop/image.png"
 binaryImagePath = "C:/Users/aless/Desktop/original.png"
 binaryImage = Image.open(binaryImagePath)
