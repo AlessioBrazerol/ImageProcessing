@@ -1,6 +1,7 @@
 from PIL import Image
 from progress.bar import Bar
 
+
 def convolution(input_image, structuring_element):
     # Create Progress Bar
     bar = Bar('Creating Image', max=input_image.size[0]*input_image.size[1])
@@ -31,7 +32,6 @@ def convolution(input_image, structuring_element):
                     pixel_x = x + column_idx - se_center[0]
                     pixel_y = y + row_idx - se_center[1]
 
-
                     # Check if pixel_x and pixel_y are inside the image
                     if 0 <= pixel_x < input_image.size[0] and 0 <= pixel_y < input_image.size[1]:
                         # Create new color out of neighbour colors
@@ -53,6 +53,8 @@ def convolution(input_image, structuring_element):
 
             if normalize:
                 color_new = (color_new[0] // n, color_new[1] // n, color_new[2] // n)
+
+            color_new = (int(color_new[0]), int(color_new[1]), int(color_new[2]))
 
             image_map[x, y] = color_new
             bar.next()
