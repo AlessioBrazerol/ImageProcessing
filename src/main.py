@@ -1,8 +1,9 @@
 from PIL import Image
 from src.binaryimageprocessing import dilate_binary_image, erode_binary_image
 from src.convolution import convolution
-from src.transformation import affine_transform
+from src.transformation import affine_transform, transform
 from math import sin, cos, pi
+import numpy as np
 
 binaryImagePath = "../res/original.png"
 binaryImage = Image.open(binaryImagePath)
@@ -26,6 +27,14 @@ lennaImagePath = "../res/lenna.jpg"
 lennaImage = Image.open(lennaImagePath)
 
 '''
+
+# Example transform
+
+transformMatrix = [[500, 500, 0]]
+
+image = transform(lennaImage, transformMatrix)
+image.show()
+
 
 # Example affine transformations
 
@@ -63,6 +72,14 @@ shearMatrix = [[1, 0.5, 1],
                [0, 0, 1]]
 
 image = affine_transform(lennaImage, shearMatrix)
+image.show()
+
+a = pi / 6
+rotationMatrix = [[cos(a), sin(a), 0],
+                  [-sin(a), cos(a), 0],
+                  [0, 0, 1]]
+
+image = affine_transform(image, rotationMatrix)
 image.show()
 
 
