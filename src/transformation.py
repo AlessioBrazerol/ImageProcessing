@@ -2,7 +2,7 @@ from PIL import Image
 import numpy as np
 
 
-def transform(input_image, affine_matrix):
+def affine_transform(input_image, affine_matrix):
     output_image = Image.new("RGB", input_image.size, "white")
     image_map = output_image.load()
 
